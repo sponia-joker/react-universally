@@ -1,0 +1,36 @@
+{
+    "name": "react-universally",
+    "version": "1.0.0",
+    "description": "react universally",
+    "main": "index.js",
+    "repository": "git@github.com:sponia-joker/react-universally.git",
+    "author": "joker <fengdali@sponia.com>",
+    "license": "MIT",
+    "scripts": {
+        "start:server": "rm -rf ./build && webpack --config  webpack.config.server.js",
+        "start:client": "webpack-dev-server --config webpack.config.client.js",
+        "start": "rm -rf ./build && npm-run-all --parallel start:server start:client"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.24.1",
+        "babel-loader": "^7.0.0",
+        "babel-plugin-transform-decorators-legacy": "^1.3.4",
+        "babel-preset-env": "^1.5.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "css-loader": "^0.28.3",
+        "npm-run-all": "^4.0.2",
+        "react-hot-loader": "next",
+        "start-server-webpack-plugin": "^2.2.0",
+        "style-loader": "^0.18.1",
+        "webpack": "^2.6.1",
+        "webpack-dev-server": "^2.4.5",
+        "webpack-node-externals": "^1.6.0"
+    },
+    "dependencies": {
+        "express": "^4.15.3",
+        "prop-types": "^15.5.10",
+        "react": "^15.5.4",
+        "react-dom": "^15.5.4"
+    }
+}
