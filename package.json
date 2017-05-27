@@ -8,7 +8,7 @@
     "license": "MIT",
     "scripts": {
         "start:server": "rm -rf ./build && webpack --config  webpack.config.server.js",
-        "start:client": "webpack-dev-server --config webpack.config.client.js",
+        "start:client": "babel-node bin/express-client-server",
         "start": "rm -rf ./build && npm-run-all --parallel start:server start:client"
     },
     "devDependencies": {
@@ -24,10 +24,12 @@
         "start-server-webpack-plugin": "^2.2.0",
         "style-loader": "^0.18.1",
         "webpack": "^2.6.1",
-        "webpack-dev-server": "^2.4.5",
+        "webpack-dev-middleware": "^1.10.2",
+        "webpack-hot-middleware": "^2.18.0",
         "webpack-node-externals": "^1.6.0"
     },
     "dependencies": {
+        "compression": "^1.6.2",
         "express": "^4.15.3",
         "prop-types": "^15.5.10",
         "react": "^15.5.4",
