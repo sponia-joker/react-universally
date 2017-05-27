@@ -3,13 +3,18 @@ const path = require("path");
 
 module.exports = {
   devtool: "inline-source-map",
+  target: "web",
   entry: [
     "react-hot-loader/patch",
     "webpack-dev-server/client?http://localhost:3001",
     "webpack/hot/only-dev-server",
     "./src/client/index",
   ],
-  target: "web",
+  output: {
+    path: path.join(__dirname, "build"),
+    publicPath: "http://localhost:3001/",
+    filename: "client.js",
+  },
   module: {
     rules: [
       {
@@ -37,9 +42,5 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
   },
-  output: {
-    path: path.join(__dirname, "build"),
-    publicPath: "http://localhost:3001/",
-    filename: "client.js",
-  },
+  
 };
